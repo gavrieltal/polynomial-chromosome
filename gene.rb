@@ -11,7 +11,8 @@ class Expr # immutable Chromosome
     elsif args.is_a?(Hash) && args.has_key?(:deg) && args.has_key?(:coeff_max)
       @terms = Array.new(args[:deg] + 1) {
         rand(args[:coeff_max]) * random_sign }
-    else raise "args is an array of coeffs or a hash with :deg and :coeff_max"
+    else
+      raise "args is an array of coeffs or a hash with :deg and :coeff_max"
     end
   end
       
